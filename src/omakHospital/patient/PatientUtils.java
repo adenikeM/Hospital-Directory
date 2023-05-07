@@ -1,19 +1,15 @@
 package omakHospital.patient;
 
-import omakHospital.AppConstant;
 import omakHospital.Gender;
 import omakHospital.InvalidPatientIdException;
-import omakHospital.doctor.Doctor;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 import static omakHospital.AppConstant.*;
-import static omakHospital.AppConstant.FILE;
-import static omakHospital.base.Method.collectIntegerInput;
-import static omakHospital.base.Method.getString;
+import static omakHospital.Message.collectIntegerInput;
+import static omakHospital.base.GetString.getString;
 
 public class PatientUtils {
     private static final Object SPLIT_PATTERN = ";\n";
@@ -48,7 +44,7 @@ public class PatientUtils {
             throw new RuntimeException(e);
         }
     }
-    public static void getPatientFromFile() {
+    public static void getPatientsFromFile() {
         String stringFromFile = readFromFile();
         if (!stringFromFile.isEmpty()) {
             String[] split = stringFromFile.split((String) SPLIT_PATTERN);
@@ -66,7 +62,7 @@ public class PatientUtils {
         }
         return getString();
     }
-    public static void viewPatient(){
+    public static void viewPatients(){
         if (!PATIENT_LIST.isEmpty()) {
             String dashes = "________________________________________________________________________________________";
             String header = "LIST OF PATIENT AT OMAK HOSPITAL";
@@ -84,7 +80,7 @@ public class PatientUtils {
         }
     }
     public static void deletePatientByID(){
-        viewPatient();
+        viewPatients();
         int patientId = collectIntegerInput("Enter patient ID you want to delete");
         Patient patient = getPatient(patientId);
         patient.delete();

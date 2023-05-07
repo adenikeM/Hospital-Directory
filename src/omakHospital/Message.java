@@ -2,7 +2,7 @@ package omakHospital;
 
 import java.util.Scanner;
 
-public class message {
+public class Message {
     public static void displayWelcomeMessage() {
         System.out.println("Welcome to OMAK HOSPITAL");
         System.out.println("MOTTO: ALLAH'S HEAL");
@@ -16,6 +16,11 @@ public class message {
     private static int selectOperation(String message) {
         System.out.println(message);
         Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
+    public static int collectIntegerInput(String message) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(message);
         return scanner.nextInt();
     }
 

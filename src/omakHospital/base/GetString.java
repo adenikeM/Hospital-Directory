@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import static omakHospital.AppConstant.FILE;
 
-public class Method {
+public class GetString {
     public static String getString() {
         StringBuilder sb = new StringBuilder();
         try (FileReader fileReader = new FileReader(FILE)) {
@@ -19,11 +19,7 @@ public class Method {
         }
         return sb.toString();
     }
-    public static int collectIntegerInput(String message) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(message);
-        return scanner.nextInt();
-    }
+
    }
 
 

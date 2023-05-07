@@ -3,20 +3,19 @@ package omakHospital.doctor;
 import omakHospital.AppConstant;
 import omakHospital.Gender;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 import static omakHospital.AppConstant.DOCTOR_LIST;
 import static omakHospital.AppConstant.FILE;
-import static omakHospital.base.Method.getString;
+import static omakHospital.base.GetString.getString;
 
 public class Utils {
 
     private static final Object SPLIT_PATTERN =";\n";
 
-    public static void getDoctorFromFile() {
+    public static void getDoctorsFromFile() {
         String stringFromFile = readFromFile();
         if(!stringFromFile.isEmpty()){
             String[] split = stringFromFile.split((String) SPLIT_PATTERN);
@@ -70,7 +69,7 @@ public class Utils {
                 }
             return getString();
         }
-        public static void viewDoctor(){
+        public static void viewDoctors(){
             if (!DOCTOR_LIST.isEmpty()) {
                 String dashes = "_______________________________________________________________________________________________________";
                 String header = "LIST OF DOCTOR AT OMAK HOSPITAL";
