@@ -24,7 +24,7 @@ public class Doctor extends Person {
     public void setDepartment(String department) {this.department = department;}
 
     public String getMessageDetails(){
-        return doctorId + "," + super.getFirstName() + "," + super.getLastName() + "," + super.getAge()
+        return doctorId +  "," + super.getFirstName() + "," + super.getLastName() + "," + super.getAge()
                 + "," + super.getAddress() + "," + super.getGender() + "," + department;};
 
 
