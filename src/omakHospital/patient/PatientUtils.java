@@ -13,7 +13,6 @@ import static omakHospital.base.GetString.getString;
 
 public class PatientUtils {
     private static final Object SPLIT_PATTERN = ";\n";
-
     public static void getPatientFromUser() {
         do {
             System.out.println("Enter your details First Name, Last Name, Age, Address, Gender or -1 to stop");
@@ -27,11 +26,9 @@ public class PatientUtils {
                     Gender.valueOf(split[4]));
             PATIENT_LIST.add(patient);
         } while (true);
-
     }
 
     public static void saveToPatientFile() {
-
         try(
                 FileWriter fileWriter = new FileWriter(PATIENTFILE)){
             for(Patient patient : PATIENT_LIST) {
@@ -87,7 +84,6 @@ public class PatientUtils {
         saveToPatientFile();
         System.out.println("Patient with ID" + patientId + "is deleted");
     }
-
     private static Patient getPatient(int patientId) {
         if (patientId < 1 || patientId > PATIENT_LIST.size()) {
             try {

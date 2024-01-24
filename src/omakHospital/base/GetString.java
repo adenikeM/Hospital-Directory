@@ -19,7 +19,6 @@ public class GetString {
         }
         return sb.toString();
     }
-
    }
 
 
